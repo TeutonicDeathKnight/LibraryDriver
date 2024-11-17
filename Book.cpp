@@ -6,7 +6,8 @@ using namespace std;
 
 void Book::listBookInfo() const
 {
-	cout << bookTitle << " by " << bookAuthor << " Copyright-" << bookCopyrightYear;
+	cout << "* " << bookTitle << " by " << bookAuthor
+		<< " Copyright-" << bookCopyrightYear;
 
 	if (isHardbound == true)
 		cout << " Hardbound";

@@ -71,11 +71,8 @@ int Library::calcNumberHardbound() const
 
 	//increment numHardback for each book in booksList if isHardbound = false
 	for (Book book : booksList)
-	{
-		bool val = book.getIsHardbound();
-		if (val == true && book.getBookTitle() != "")
+		if (book.getIsHardbound() == true && book.getBookTitle() != "")
 			numHardback++;
-	}
 
 	return numHardback;
 }
@@ -86,18 +83,33 @@ int Library::calcNumberPaperback() const
 
 	//increment numPaperback for each book in booksList if isHardbound = false
 	for (Book book : booksList)
-	{
-		bool val = book.getIsHardbound();
-		if (val == false && book.getBookTitle() != "")
+		if (book.getIsHardbound() == false && book.getBookTitle() != "")
 			numPaperback++;
-	}
 
 	return numPaperback;
 }
 
 void Library::listLibraryInfo() const
 {
+	cout << endl << endl << libraryName << endl << endl
+		<< "Sample of books available to read:" << endl << endl;
 
+	if (countBooksInList() != 0)
+	{
+		for (Book book : booksList)
+		{
+			book.listBookInfo();
+			cout << endl;
+		}
+
+		cout << endl
+			<< "Hardbound Books: " << calcNumberHardbound() << endl
+			<< "Paperback Books: " << calcNumberPaperback() << endl << endl;
+	}
+	else
+		cout << "* No books are available at this time." << endl << endl;
+
+	system("pause");
 }
 
 void Library::setLibraryName(string name)
