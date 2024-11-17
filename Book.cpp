@@ -72,3 +72,19 @@ void Book::setIsHardbound(int hardbound)
 }
 
 bool Book::getIsHardbound() const { return isHardbound; }
+
+Book::Book()
+{
+	bookTitle = "";
+	bookAuthor = "";
+	bookCopyrightYear = 0;
+	isHardbound = false;
+}
+
+Book::Book(string title, string author, int copyrightYear, bool hardbound)
+{
+	setBookTitle(title);
+	setBookAuthor(author);
+	setBookCopyrightYear(copyrightYear);
+	setIsHardbound(hardbound);
+}
