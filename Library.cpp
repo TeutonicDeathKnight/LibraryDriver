@@ -23,12 +23,32 @@ int Library::countBooksInList() const
 
 int Library::calcNumberHardbound() const
 {
+	int numHardback = 0;
 
+	//increment numHardback for each book in booksList if isHardbound = false
+	for (Book book : booksList)
+	{
+		bool val = book.getIsHardbound();
+		if (val = true)
+			numHardback++;
+	}
+
+	return numHardback;
 }
 
 int Library::calcNumberPaperback() const
 {
+	int numPaperback = 0;
 
+	//increment numPaperback for each book in booksList if isHardbound = false
+	for (Book book : booksList)
+	{
+		bool val = book.getIsHardbound();
+		if (val = false)
+			numPaperback++;
+	}
+
+	return numPaperback;
 }
 
 void Library::listLibraryInfo() const
