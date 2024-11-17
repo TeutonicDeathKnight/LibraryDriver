@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//listBookInfo()
 void Book::listBookInfo() const
 {
 	cout << "* " << bookTitle << " by " << bookAuthor
@@ -17,6 +18,7 @@ void Book::listBookInfo() const
 		cout << " **Error in determining if hardbound or paperback**";
 }
 
+//setBookTitle()
 void Book::setBookTitle(string title)
 {
 	//if title input is blank, output error message
@@ -27,8 +29,10 @@ void Book::setBookTitle(string title)
 		bookTitle = title;
 }
 
+//getBookTitle()
 string Book::getBookTitle() const { return bookTitle; }
 
+//setBookAuthor()
 void Book::setBookAuthor(string author)
 {
 	//if author input is blank, output error message
@@ -39,8 +43,10 @@ void Book::setBookAuthor(string author)
 		bookAuthor = author;
 }
 
+//getBookAuthor()
 string Book::getBookAuthor() const { return bookAuthor; }
 
+//setBookCopyrightYear()
 void Book::setBookCopyrightYear(int copyrightYear)
 {
 	//if length of copyrightYear is less than or greater than 4, output error message
@@ -54,8 +60,10 @@ void Book::setBookCopyrightYear(int copyrightYear)
 		bookCopyrightYear = copyrightYear;
 }
 
+//getBookCopyrightYear()
 int Book::getBookCopyrightYear() const { return bookCopyrightYear; }
 
+//setIsHardbound()
 void Book::setIsHardbound(int hardbound)
 {
 	//verify input is 1 or 0
@@ -74,8 +82,10 @@ void Book::setIsHardbound(int hardbound)
 		cout << endl << "**Input error**" << endl << "Input must be 1 or 0." << endl;
 }
 
+//getIsHardbound()
 bool Book::getIsHardbound() const { return isHardbound; }
 
+//default constructor
 Book::Book()
 {
 	bookTitle = "";
@@ -84,6 +94,7 @@ Book::Book()
 	isHardbound = false;
 }
 
+//four argument constructor
 Book::Book(string title, string author, int copyrightYear, bool hardbound)
 {
 	setBookTitle(title);

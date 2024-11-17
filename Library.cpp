@@ -6,14 +6,19 @@
 
 using namespace std;
 
+//addBook()
 void Library::addBook(const Book& book)
 {
+	//if book title, author, and copyright year are not empty, process input
 	if (book.getBookTitle() != ""
 		&& book.getBookAuthor() != ""
 		&& book.getBookCopyrightYear() != 0)
 	{
+		//loop through all entries in the list
 		for (Book bk : booksList)
 		{
+			//if book title of current item in list is empty
+			// assign book input to current item
 			if (bk.getBookTitle() == "")
 			{
 				bk = book;
@@ -23,6 +28,7 @@ void Library::addBook(const Book& book)
 	}
 }
 
+//sortBooks()
 void Library::sortBooks()
 {
 	int location;
@@ -53,9 +59,12 @@ void Library::sortBooks()
 	}
 }
 
+//countBooksInList()
 int Library::countBooksInList() const
 {
 	int number = 0;
+
+	//increment number for each book if book title is not an empty string
 	for (Book book : booksList)
 	{
 		if (book.getBookTitle() != "")
@@ -65,6 +74,7 @@ int Library::countBooksInList() const
 	return number;
 }
 
+//calcNumberHardbound()
 int Library::calcNumberHardbound() const
 {
 	int numHardback = 0;
@@ -77,6 +87,7 @@ int Library::calcNumberHardbound() const
 	return numHardback;
 }
 
+//calcNumberPaperback()
 int Library::calcNumberPaperback() const
 {
 	int numPaperback = 0;
@@ -89,11 +100,14 @@ int Library::calcNumberPaperback() const
 	return numPaperback;
 }
 
+//listLibraryInfo()
 void Library::listLibraryInfo() const
 {
 	cout << endl << endl << libraryName << endl << endl
 		<< "Sample of books available to read:" << endl << endl;
 
+	//if booksList has books, output books list and hardbound/paperback counts
+	// else output "* No books are available at this time."
 	if (countBooksInList() != 0)
 	{
 		for (Book book : booksList)
@@ -112,6 +126,7 @@ void Library::listLibraryInfo() const
 	system("pause");
 }
 
+//setLibraryName()
 void Library::setLibraryName(string name)
 {
 	//if name is blank, output error message
@@ -122,8 +137,10 @@ void Library::setLibraryName(string name)
 		libraryName = name;
 }
 
+//getLibraryName()
 string Library::getLibraryName() const { return libraryName; }
 
+//setLibraryLocation()
 void Library::setLibraryLocation(string location)
 {
 	//if location is input is blank, output error message
@@ -134,8 +151,10 @@ void Library::setLibraryLocation(string location)
 		libraryLocation = location;
 }
 
+//getLibraryLocation()
 string Library::getLibraryLocation() const { return libraryLocation; }
 
+//setMaximumBooksInList()
 void Library::setMaximumBooksInList(int bookNum)
 {
 	//If bookNum input is less than 3 or greater than 6, output error message
@@ -151,8 +170,10 @@ void Library::setMaximumBooksInList(int bookNum)
 	}
 }
 
+//getMaximumBooksInList()
 int Library::getMaximumBooksInList() const { return maximumBooksInList; }
 
+//default constructor
 Library::Library()
 {
 	libraryName = "";
@@ -160,6 +181,7 @@ Library::Library()
 	maximumBooksInList = 0;
 }
 
+//three argument constructor
 Library::Library(string name, string location, int number)
 {
 	setLibraryName(name);

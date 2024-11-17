@@ -10,6 +10,8 @@
 #include <string>
 #include <cmath>
 #include <iomanip>
+#include "Library.h"
+#include "Book.h"
 
 using namespace std;
 
