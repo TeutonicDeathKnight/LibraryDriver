@@ -5,24 +5,56 @@
 
 using namespace std;
 
-void Library::addBook(Book book) {}
+void Library::addBook(Book book)
+{
 
-void Library::sortBooks() {}
+}
 
-int Library::countBooksInList() const {}
+void Library::sortBooks()
+{
 
-int Library::calcNumberHardbound() const {}
+}
 
-int Library::calcNumberPaperback() const {}
+int Library::countBooksInList() const
+{
 
-void Library::listLibraryInfo() const {}
+}
 
-void Library::setLibraryName() {}
-void Library::getLibraryName() const {}
-void Library::setLibraryLocation() {}
-void Library::getLibraryLocation() const {}
-void Library::setMaximumBooksInList() {}
-void Library::getMaximumBooksInList() const {}
+int Library::calcNumberHardbound() const
+{
+
+}
+
+int Library::calcNumberPaperback() const
+{
+
+}
+
+void Library::listLibraryInfo() const
+{
+
+}
+
+void Library::setLibraryName()
+{
+
+}
+
+string Library::getLibraryName() const { return libraryName; }
+
+void Library::setLibraryLocation()
+{
+
+}
+
+string Library::getLibraryLocation() const { return libraryLocation; }
+
+void Library::setMaximumBooksInList()
+{
+
+}
+
+int Library::getMaximumBooksInList() const { return maximumBooksInList; }
 
 Library::Library()
 {

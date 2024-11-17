@@ -37,9 +37,14 @@ void Book::setBookCopyrightYear(int copyrightYear)
 
 int Book::getBookCopyrightYear() const { return bookCopyrightYear; }
 
-void Book::setIsHardbound(bool hardbound)
+void Book::setIsHardbound(int hardbound)
 {
-
+	if (hardbound < 0)
+		cout << endl << "Input was less than 0. Input must be 1 or 0." << endl;
+	else if (hardbound > 1)
+		cout << endl << "Input was greater than 1. Input must be 1 or 0." << endl;
+	else
+		isHardbound = hardbound;
 }
 
 bool Book::getIsHardbound() const { return isHardbound; }

@@ -22,11 +22,11 @@ public:
 		//Displays the output of library and book information
 
 	void setLibraryName();
-	void getLibraryName() const;
+	std::string getLibraryName() const;
 	void setLibraryLocation();
-	void getLibraryLocation() const;
+	std::string getLibraryLocation() const;
 	void setMaximumBooksInList();
-	void getMaximumBooksInList() const;
+	int getMaximumBooksInList() const;
 		//Setters and getters for class data members
 
 	Library();
@@ -39,10 +39,10 @@ public:
 		// initializes vector to an empty vector
 
 private:
-	string libraryName;
+	std::string libraryName;
 		//Store library name
 		// cannot be blank
-	string libraryLocation;
+	std::string libraryLocation;
 		//store library location
 		// cannot be blank
 	int maximumBooksInList;
