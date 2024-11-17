@@ -25,7 +25,32 @@ void Library::addBook(const Book& book)
 
 void Library::sortBooks()
 {
+	int location;
+	Book temp;
 
+	//loop through booksList vector
+	for (int outOfOrder = 1; outOfOrder < booksList.size(); outOfOrder++)
+	{
+		if (booksList[outOfOrder].getBookTitle()
+			< booksList[outOfOrder - 1].getBookTitle())
+		{
+			location = outOfOrder;
+			temp = booksList[location];
+
+			//loop through list starting at current item
+			// assign previous value to current position
+			// until current value is greater than previous value
+			do
+			{
+				booksList[location] = booksList[location - 1];
+				location--;
+			} while (location > 0
+				&& booksList[location - 1].getBookTitle() > temp.getBookTitle());
+
+			booksList[location] = temp;
+
+		}
+	}
 }
 
 int Library::countBooksInList() const

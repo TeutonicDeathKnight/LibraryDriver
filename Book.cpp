@@ -43,9 +43,8 @@ string Book::getBookAuthor() const { return bookAuthor; }
 void Book::setBookCopyrightYear(int copyrightYear)
 {
 	//if length of copyrightYear is less than or greater than 4, output error message
-	// 
-	if (to_string(copyrightYear).length() < 4
-		|| to_string(copyrightYear).length() > 4)
+	// else member variable bookCopyrightYear is set to copyrightYear value
+	if (to_string(copyrightYear).length() != 4)
 		cout << endl << "Copyright year length is less than four characters." << endl
 		<< "Copyright year length must be four characters." << endl;
 	else if (copyrightYear < 1900 || copyrightYear > 2023)

@@ -1,7 +1,8 @@
 // LibraryDriver.cpp -- Build a report based on a loaded list of books in a shipment
 //CSIS 212-<D02_202440>
 
-//copyright year verification logic derived from lab instructions
+//copyright year verification logic derived/taken from lab instructions
+//booksList sorting derived/taken from my lab 3 submission and the textbook
 
 //include and using statements
 #include <iostream>
