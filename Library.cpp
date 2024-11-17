@@ -8,7 +8,19 @@ using namespace std;
 
 void Library::addBook(const Book& book)
 {
-
+	if (book.getBookTitle() != ""
+		&& book.getBookAuthor() != ""
+		&& book.getBookCopyrightYear() != 0)
+	{
+		for (Book bk : booksList)
+		{
+			if (bk.getBookTitle() == "")
+			{
+				bk = book;
+				break;
+			}
+		}
+	}
 }
 
 void Library::sortBooks()
@@ -18,7 +30,14 @@ void Library::sortBooks()
 
 int Library::countBooksInList() const
 {
+	int number = 0;
+	for (Book book : booksList)
+	{
+		if (book.getBookTitle() != "")
+			number++;
+	}
 
+	return number;
 }
 
 int Library::calcNumberHardbound() const
@@ -29,7 +48,7 @@ int Library::calcNumberHardbound() const
 	for (Book book : booksList)
 	{
 		bool val = book.getIsHardbound();
-		if (val = true)
+		if (val == true && book.getBookTitle() != "")
 			numHardback++;
 	}
 
@@ -44,7 +63,7 @@ int Library::calcNumberPaperback() const
 	for (Book book : booksList)
 	{
 		bool val = book.getIsHardbound();
-		if (val = false)
+		if (val == false && book.getBookTitle() != "")
 			numPaperback++;
 	}
 
