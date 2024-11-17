@@ -3,7 +3,7 @@
 class Library
 {
 public:
-	void addBook(Book book);
+	void addBook(const Book& book);
 		//Accepts a single book object and adds it to the booksList vector
 
 	void sortBooks();
@@ -21,11 +21,11 @@ public:
 	void listLibraryInfo() const;
 		//Displays the output of library and book information
 
-	void setLibraryName();
+	void setLibraryName(std::string name);
 	std::string getLibraryName() const;
-	void setLibraryLocation();
+	void setLibraryLocation(std::string location);
 	std::string getLibraryLocation() const;
-	void setMaximumBooksInList();
+	void setMaximumBooksInList(int bookNum);
 	int getMaximumBooksInList() const;
 		//Setters and getters for class data members
 

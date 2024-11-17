@@ -60,13 +60,16 @@ void Book::setIsHardbound(int hardbound)
 {
 	//verify input is 1 or 0
 	// if not 1 or 0, output appropriate error message
-	// if 1 or 0, set member variable isHardbound to hardbound value
+	// if 1, set member variable isHardbound to true
+	// if 0, set member variable isHardbound to false
 	if (hardbound < 0)
 		cout << endl << "Input was less than 0. Input must be 1 or 0." << endl;
 	else if (hardbound > 1)
 		cout << endl << "Input was greater than 1. Input must be 1 or 0." << endl;
-	else if (hardbound == 1 || hardbound == 0)
-		isHardbound = hardbound;
+	else if (hardbound == 1)
+		isHardbound = true;
+	else if (hardbound == 0)
+		isHardbound = false;
 	else
 		cout << endl << "**Input error**" << endl << "Input must be 1 or 0." << endl;
 }
