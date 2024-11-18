@@ -17,6 +17,9 @@
 using namespace std;
 
 //function prototypes
+void displayHeader();
+void menu(const Library& library, char& selection);
+void programAction(const Library& library, const char& selection);
 Library requestLibraryInfo();
 bool validateNotEmptyString(string strToTest);
 string changeWhitespaceToNull(string str);
@@ -25,14 +28,14 @@ void clearInputStream();
 //main function
 int main()
 {
-	cout << "Zachary Seeley -- Lab 4 - Class Composition" << endl << endl << endl;
+	displayHeader();
+
+	bool exit = false;
 
 	//request library information and create a library object with input
 	Library library = requestLibraryInfo();
-
-	//start a loop and continue loop until user exits loop
-		//display menu
-			//error check menu input
+			
+			
 	
 		//if upper or lower case A is input, start the add book process
 			//If maximum number of books have been entered, notify user
@@ -47,6 +50,22 @@ int main()
 		//if upper or lower case Q is input, quit the program
 			//If not enough books have been entered, notify user to add more books
 			// continue the loop
+	
+
+	//start a loop and continue loop until user exits loop
+	do
+	{
+		char selection;
+
+		menu(library, selection);
+
+		switch (selection)
+		{
+		case ('a' || 'A'):
+
+		}
+
+	} while (exit == false);
 
 	//Closing program statements
 	system("pause");
@@ -54,6 +73,51 @@ int main()
 }
 
 //function definitions
+
+//displayHeader()
+void displayHeader()
+{
+	cout << "Zachary Seeley -- Lab 4 - Class Composition" << endl << endl;
+}
+
+//menu()
+void menu(const Library& library, char& selection)
+{
+	//display menu
+	cout << library.getLibraryName() << endl
+		<< library.getLibraryLocation() << endl << endl
+		<< "Menu" << endl
+		<< "A - Add a Book" << endl
+		<< "L - List the Library and Book information" << endl
+		<< "Q - Quit the program" << endl << endl;
+
+	//collect and error check menu input
+	do
+	{
+		cout << "Selection: ";
+
+		cin >> selection;
+
+		if (cin.fail() || selection != 'A' || selection != 'a'
+			|| selection != 'L' || selection != 'l'
+			|| selection != 'Q' || selection != 'q')
+		{
+			cout << endl << endl << "Your input was invalid." << endl
+				<< "Input must be one of three single characters: 'A', 'L', or 'Q'."
+				<< endl << endl;
+		}
+		else
+			system("cls");
+
+	} while (selection != 'A' || selection != 'a'
+		|| selection != 'L' || selection != 'l'
+		|| selection != 'Q' || selection != 'q');
+}
+
+void programAction(const Library& library, const char& selection)
+{
+
+}
 
 //requestLibraryInfo()
 Library requestLibraryInfo()
@@ -128,6 +192,8 @@ Library requestLibraryInfo()
 	} while (validNumber == false);
 
 	cout << endl;
+
+	system("cls");
 
 	return Library(name, location, number);
 }
