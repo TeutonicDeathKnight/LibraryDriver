@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+#include "Book.h"
 
 class Library
 {
@@ -48,6 +50,6 @@ private:
 	int maximumBooksInList;
 		//store number of maximum books in list
 		// must be between 3 and 6 inclusive
-	vector<Book> booksList;
+	std::vector<Book> booksList;
 		//store list of books
 };
